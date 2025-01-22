@@ -426,3 +426,13 @@ canvas {
     height: 100%;
     z-index: -1;
 }
+
+.project img {
+    width: 80%;              /* Reduce the size to 80% of the container width */
+    height: auto;            /* Maintain the aspect ratio */
+    max-width: 400px;        /* Set a maximum width for even smaller images */
+    margin: 20px auto;       /* Center the image horizontally and add vertical margin */
+    display: block;          /* Ensure the image is block-level for proper centering */
+    border-radius: 8px;      /* Optional: rounded corners */
+    object-fit: cover;       /* Ensures the image covers the area while maintaining aspect ratio */
+}
