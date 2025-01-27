@@ -20,13 +20,14 @@ header {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     margin: 0;
     padding: 0;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 5px 10px;
 }
 
 header nav ul li a {
@@ -363,6 +364,11 @@ footer p a:hover {
         margin: 10px 0;
     }
 
+    header nav ul li a {
+        font-size: 1em; /* Reduce font size for smaller screens */
+        padding: 5px 10px; /* Adjust padding */
+    }
+
     #hero {
         padding: 10px;
     }
@@ -436,3 +442,112 @@ canvas {
     border-radius: 8px;      /* Optional: rounded corners */
     object-fit: cover;       /* Ensures the image covers the area while maintaining aspect ratio */
 }
+
+.hamburger-menu {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #00adb5;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Base styles for the navigation */
+.nav-links {
+    position: fixed; /* Fix it to the viewport */
+    top: 0;
+    left: -100%; /* Hide off-screen to the left initially */
+    height: 100%; /* Full height of the viewport */
+    width: 250px; /* Set the menu width */
+    background-color: #333; /* Add a background color */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px; /* Add some padding */
+    transition: left 0.3s ease; /* Smooth transition for sliding in/out */
+    z-index: 1000; /* Keep it on top */
+}
+
+/* When the menu is toggled (shown) */
+.nav-links.show {
+    left: 0; /* Slide in from the left */
+}
+
+/* Navigation link styles */
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.nav-links ul li {
+    margin-bottom: 15px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+}
+
+.nav-links ul li a:hover {
+    color: #00bcd4; /* Add a hover effect */
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Position on the left */
+    z-index: 1001; /* Above the navigation menu */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+}
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+}
+
+    /* .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0b1120;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+} */
